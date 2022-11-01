@@ -70,6 +70,7 @@ Now we can start sending requests to the API!
 * / : this is the landing page and will be used to display the existing points for the user
 
 ### Calling the APIs
+For all the steps below, make sure the API server is running
 
 * For POST /addPoints API
   1) Add /addPoints to the existing URL in postman and change the API call to POST as shown below
