@@ -8,22 +8,20 @@ var totalPoints = 0
 var pointsPerPayer = {}
 var transactions = []
 app.use(express.json())
-//function to split the data time value to a more useable format
-var time_date = (date_time) => {
-    var split_data = date_time.split("T")
-    console.log(split_data)
-    split_data[1].slice(split_data[1].length - 1)
-    date = split_data[0].split()
-    return split_data
-}
+// //function to split the data time value to a more useable format
+// var time_date = (date_time) => {
+//     var split_data = date_time.split("T")
+//     console.log(split_data)
+//     split_data[1].slice(split_data[1].length - 1)
+//     date = split_data[0].split()
+//     return split_data
+// }
 
 
 var addNegPoints = (points, payer) => {//function to add a negative points tranaction
-    
     var pvePoitns = Math.abs(points) // getting the absolute points to avoid confucion during later steps
     var indexes = [] // using array to store indexes becase we cannot delete the element form the array furing the transaction
     var c = transactions.length - 1
-    console.log('negative')
     while (pvePoitns > 0){
         var payerForThisTransaction = transactions[c]['payer']
         var pointsForThisTransaction = transactions[c]['points']
@@ -43,6 +41,8 @@ var addNegPoints = (points, payer) => {//function to add a negative points trana
         }
         c--
     }
+    totalPoints += points
+    pointsPerPayer[payer] += points
     for (let i = indexes.length - 1; i >= 0; i--){
         transactions.splice(i,1)
     }
