@@ -41,6 +41,7 @@ var addNegPoints = (points, payer) => {//function to add a negative points trana
         }
         c--
     }
+    //updating totals
     totalPoints += points
     pointsPerPayer[payer] += points
     for (let i = indexes.length - 1; i >= 0; i--){
@@ -94,7 +95,8 @@ app.post('/addPoints',
 
 app.post('/spendPoints', (req, res) => {
     if(transactions.length === 0) res.status(400).json({error: "no points to spend"})
-    var pointsToSpend = parseInt(req.body.points) // getiing the input
+    if (req.body.points) var pointsToSpend = parseInt(req.body.points) // getiing the input
+    else res.status(400).json({ error: "Unable to perform transaction", reason: "points not provided"})
     //error messages for edge cases
     if (pointsToSpend <= 0) res.status(400).json({ error: "Unable to perform transaction", reason: "there are no points or is -ve"})
     if (pointsToSpend > totalPoints) res.status(400).json({ error: "Unable to perform transaction", reason: "user does not have enough points"})

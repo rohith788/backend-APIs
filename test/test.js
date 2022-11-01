@@ -111,6 +111,18 @@ describe('Points API',  () => {
             })
         })
     })
+    describe("Spend user points ", () => {
+        it("Should fail", (done) => {
+            const spend = {"sdf":  's0'}
+            chai.request(API)
+            .post("/spendPoints")
+            .send(spend)
+            .end((err, res) => {
+                res.should.have.status(400)
+                done()
+              })
+          })
+      })
 
     // GET call to get current points
     describe("Get current points", () => {
