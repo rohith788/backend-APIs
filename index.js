@@ -1,9 +1,17 @@
+/*
+This solution is not storing data anywhere(no durabel data store). 
+So, the user data will not be persisted when the server is started or after it is shut down. 
+The API is hosted on port 5000
+This project is using Expresss.js to run the server
+*/
+
+
 const { application } = require('express')
 const express = require('express')
 const app = express() //importing and using express to use server functionalities with node js
 const PORT = 5000 //hosting the application on port 8000
 
-
+//Global variables
 var totalPoints = 0
 var pointsPerPayer = {}
 var transactions = []

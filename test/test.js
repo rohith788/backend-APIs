@@ -1,3 +1,4 @@
+
 const server  =  require('../index')
 const API = 'http://localhost:5000'
 const { expect } = require('chai')
@@ -7,7 +8,9 @@ const chaiHTTP = require('chai-http')
 chai.should()
 
 chai.use(chaiHTTP)
-
+/* 
+The following test cases replicate the conditions given
+*/
 describe('Points API',  () => {
 
   // POST call for addPoints
