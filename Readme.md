@@ -91,12 +91,12 @@ For all the steps below, make sure the API server is running
   4) You should see the following output
   ![alt text](https://github.com/rohith788/fetchrewards_be/blob/main/assets/api6.png)
  * For GET / API
- 1) Change the API call to GET and the url to whats shown in the picture below.
+  1) Change the API call to GET and the url to whats shown in the picture below.
+  ![alt text](https://github.com/rohith788/fetchrewards_be/blob/main/assets/api8.png)
+  2) You don't need any input for this and click Send.
  
- 2) You don't need any input for this and click Send.
- 
- 3) You will see a similar output if there were any previous transactions.
- ![alt text](https://github.com/rohith788/fetchrewards_be/blob/main/assets/api7.png)
+  3) You will see a similar output if there were any previous transactions.
+  ![alt text](https://github.com/rohith788/fetchrewards_be/blob/main/assets/api7.png)
  
 ### Tests
 
