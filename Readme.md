@@ -1,4 +1,4 @@
-# Fetch Rewards Coding Exercise - Backend Software Engineering
+# Backend API
 ## Premise
 Create 3 APIs to add tranactions, spend points and display these poitns.
 
